@@ -36,6 +36,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/txt_lotno"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="WH-01/A01/1"
@@ -63,6 +64,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/txt_crop"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Paddy"
@@ -83,6 +85,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/txt_variety"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Laxmi"
@@ -103,6 +106,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/txt_nob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12"
@@ -123,6 +127,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/txt_qty"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2"

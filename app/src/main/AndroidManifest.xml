@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <application
@@ -16,22 +17,29 @@
         android:theme="@style/Theme.SLOCUpdation"
         tools:targetApi="31">
         <activity
+            android:name=".ToSlocPreviewActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activity.CameraEnableActivity"
-            android:label="Scan QR"
             android:exported="false"
+            android:label="Scan QR"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.SLOCUpdation.NoActionBar"
-            android:parentActivityName=".MainActivity">
+            android:theme="@style/Theme.SLOCUpdation.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Activity.ToSlocListActivity"
-            android:label="TO SLOC"
-            android:screenOrientation="portrait"
             android:exported="false"
+            android:label="TO SLOC"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SLOCUpdation.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
@@ -39,10 +47,10 @@
         </activity>
         <activity
             android:name=".Activity.FromSlocListActivity"
-            android:label="FROM SLOC"
             android:exported="false"
-            android:screenOrientation="portrait"
+            android:label="FROM SLOC"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SLOCUpdation.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
@@ -51,8 +59,8 @@
         <activity
             android:name=".Activity.FromSLOCScanner_Activity"
             android:exported="false"
-            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SLOCUpdation.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
