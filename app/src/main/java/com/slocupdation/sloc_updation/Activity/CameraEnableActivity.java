@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Camera;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -84,10 +85,9 @@ public class CameraEnableActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                if (ContextCompat.checkSelfPermission(CameraEnableActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+                if (!ActivityCompat.shouldShowRequestPermissionRationale(CameraEnableActivity.this, Manifest.permission.CAMERA)){
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
-                        Toast.makeText(CameraEnableActivity.this, "Entered", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else {
