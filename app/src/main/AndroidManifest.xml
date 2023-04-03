@@ -17,6 +17,13 @@
         android:theme="@style/Theme.SLOCUpdation"
         tools:targetApi="31">
         <activity
+            android:name=".FromSlocPreviewActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ToSlocPreviewActivity"
             android:exported="false">
             <meta-data
