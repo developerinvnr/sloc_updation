@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,7 +27,7 @@ import com.slocupdation.sloc_updation.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
-    private CardView cd_fromSloc, cd_toSloc;
+    private Button btn_fromSloc, btn_toSloc;
 
     private FragmentHomeBinding binding;
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 1;
@@ -35,15 +36,15 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        cd_fromSloc = view.findViewById(R.id.cd_fromSloc);
-        cd_toSloc = view.findViewById(R.id.cd_toSloc);
+        btn_fromSloc = view.findViewById(R.id.btn_fromSloc);
+        btn_toSloc = view.findViewById(R.id.btn_toSloc);
 
 //        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
 //            requestPermissions(new String[] {Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
 //        }
 
 
-        cd_fromSloc.setOnClickListener(new View.OnClickListener() {
+        btn_fromSloc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
@@ -57,7 +58,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        cd_toSloc.setOnClickListener(new View.OnClickListener() {
+        btn_toSloc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){

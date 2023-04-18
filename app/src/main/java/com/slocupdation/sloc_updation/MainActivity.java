@@ -1,5 +1,6 @@
 package com.slocupdation.sloc_updation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -17,7 +18,9 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.slocupdation.sloc_updation.Activity.LoginActivity;
 import com.slocupdation.sloc_updation.databinding.ActivityMainBinding;
+import com.slocupdation.sloc_updation.sessionmanager.SharedPreferences;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,15 +34,18 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
 //        setSupportActionBar(binding.appBarMain.toolbar);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        SharedPreferences.getInstance(getApplicationContext());
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        navigationView.getMenu().findItem(R.id.nav_slideshow).setOnMenuItemClickListener(menuItem -> {
+            logout();
+            return true;
+        });
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setOpenableLayout(drawer)
@@ -60,6 +66,14 @@ public class MainActivity extends AppCompatActivity {
 //        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setHomeAsUpIndicator(R.drawable.hamburger_menu);
+    }
+
+    private void logout() {
+        SharedPreferences.getInstance().clearSharedPref();
+        Intent loginActivity = new Intent(getApplicationContext(), LoginActivity.class);
+        loginActivity.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(loginActivity);
+        finish();
     }
 
     @Override
