@@ -48,10 +48,10 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
-                    Intent intent = new Intent(getContext(), FromSlocListActivity.class);
+                    //Intent intent = new Intent(getContext(), FromSlocListActivity.class);
+                    Intent intent = new Intent(getContext(), FromSLOCScanner_Activity.class);
                     startActivity(intent);
-                }
-                else {
+                } else {
                     Intent intent = new Intent(getContext(), CameraEnableActivity.class);
                     startActivity(intent);
                 }

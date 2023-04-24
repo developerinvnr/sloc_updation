@@ -3,6 +3,7 @@ package com.slocupdation.sloc_updation.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -32,7 +33,10 @@ public class FromSLOCScanner_Activity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        Intent intent = new Intent(FromSLOCScanner_Activity.this, FromSlocListActivity.class);
                         Toast.makeText(FromSLOCScanner_Activity.this, result.getText(), Toast.LENGTH_SHORT).show();
+                        intent.putExtra("scanResult", result.getText());
+                        startActivity(intent);
                     }
                 });
             }

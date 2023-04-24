@@ -15,6 +15,7 @@ public class FromSlocListActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private CheckBox checkBox;
     private Button btn_preview, btn_rescan, btn_cancel;
+    private String scanResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class FromSlocListActivity extends AppCompatActivity {
         TextView title_toolbar = findViewById(R.id.title_toolbar);
         title_toolbar.setText("FROM SLOC");
 
+        scanResult=getIntent().getStringExtra("scanResult");
 
     }
 }
